@@ -15,7 +15,6 @@ import org.springframework.validation.FieldError;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.*;
 
-import javax.validation.Valid;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -78,11 +77,10 @@ public class EmployeesController {
     @ExceptionHandler(MethodArgumentNotValidException.class)
     @ResponseStatus(HttpStatus.BAD_REQUEST)
     public ErrorDataResult<Object> handleValidationException(MethodArgumentNotValidException exceptions){
-        Map<String, String> validationErrors = new HashMap<String, String>();
+        Map<String, String> validationErrors = new HashMap<>();
         for(FieldError fieldError : exceptions.getBindingResult().getFieldErrors()){
             validationErrors.put(fieldError.getField(), fieldError.getDefaultMessage());
         }
-        ErrorDataResult<Object> errors = new ErrorDataResult<Object>(validationErrors, MessageResults.error);
-        return errors;
+        return new ErrorDataResult<>(validationErrors, MessageResults.error);
     }
 }

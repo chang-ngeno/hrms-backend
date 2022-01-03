@@ -1,11 +1,11 @@
-![Logo](https://github.com/LatifY/HRMS/blob/master/files/logo.png)
+![Logo](https://github.com/Chang-ngeno/HRMS/blob/master/files/logo.png)
 
 **Human Resources Management System** <br>
 (İnsan Kaynakları Yönetim Sistemi) <br><br>
 Bu sistem **Latif Yılmaz** tarafından **kodlama.io** yardımıyla yapılmıştır. <br>
 Sistemin Backend kısmı **Spring Boot** kullanılarak hazırlanmıştır. <br>
 Canlı projeye buradan ulaşabilirsiniz: *https://hrms-kodlamaio.herokuapp.com* <br>
-Front-End kodlarına buradan ulaşabilirsiniz: *https://github.com/LatifY/hrms-frontend* <br><br>
+Front-End kodlarına buradan ulaşabilirsiniz: *https://github.com/Chang-ngeno/hrms-frontend* <br><br>
 Tüm hakları saklı falan değildir. <br>
 💗 ve ☕ ile yapıldı!
 
@@ -241,4 +241,4 @@ Tüm hakları saklı falan değildir. <br>
 </details>
 
 ### Postgresql Diagram
-![ERDiagram](https://github.com/LatifY/HRMS/blob/master/files/ERDiagram.jpg)
+![ERDiagram](https://github.com/Chang-ngeno/HRMS/blob/master/files/ERDiagram.jpg)

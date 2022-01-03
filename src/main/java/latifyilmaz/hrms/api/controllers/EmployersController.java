@@ -21,7 +21,7 @@ import java.util.Map;
 
 @RestController
 @RequestMapping("/api/employers")
-@CrossOrigin
+@CrossOrigin(origins = {"0.0.0.0:5000","*"})
 public class EmployersController {
     private EmployerService employerService;
 
