@@ -1,0 +1,27 @@
+spring:
+  jpa:
+    properties:
+      javax:
+        persistence:
+          validation:
+            mode: none
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+    hibernate:
+      ddl-auto: update
+      show-sql: true
+  datasource:
+    url: jdbc:postgresql://127.0.0.1:49153/hrms
+    username: postgres
+    password: postgres123
+logging:
+  level:
+    web: DEBUG
+
+# Server port
+server:
+  port: 8090
+
+# CORS URL Configuration
+cors:
+  origin: http://localhost:3000

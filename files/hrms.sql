@@ -34,7 +34,7 @@ CREATE TABLE public.employers
     user_id integer NOT NULL,
     company_name character varying(60) NOT NULL,
     website character varying(30) NOT NULL,
-    phone character varying(10) NOT NULL,
+    phone character varying(15) NOT NULL,
     verified_by_system boolean NOT NULL,
     PRIMARY KEY (user_id)
 );

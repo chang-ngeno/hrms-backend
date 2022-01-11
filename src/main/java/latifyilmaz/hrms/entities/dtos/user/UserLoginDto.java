@@ -10,4 +10,5 @@ import lombok.NoArgsConstructor;
 public class UserLoginDto {
     private String email;
     private String password;
+    private boolean rememberMe;
 }

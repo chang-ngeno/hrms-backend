@@ -1,0 +1,16 @@
+spring:
+  jpa:
+    properties:
+      javax:
+        persistence:
+          validation:
+            mode: none
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+    hibernate:
+      ddl-auto: update
+      show-sql: true
+  datasource:
+    url: jdbc:postgresql://hrms-db:5432/hrms
+    username: postgres
+    password: postgres123
