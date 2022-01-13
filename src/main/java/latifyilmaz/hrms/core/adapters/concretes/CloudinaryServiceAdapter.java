@@ -21,9 +21,9 @@ public class CloudinaryServiceAdapter implements ImageUploadService {
 
     public CloudinaryServiceAdapter(){
         Map<String, String> config = new HashMap<>();
-        config.put("cloud_name", "djsgo7hoo");
-        config.put("api_key", "167727985792741");
-        config.put("api_secret", "_pMOHiX6s2pP5I9RBqqfJGoC0L4");
+        config.put("cloud_name", "drma0wotu");
+        config.put("api_key", "853188371446736");
+        config.put("api_secret", "ef13HxFsFp-_bF2w_VoepOELSys");
         cloudinary = new Cloudinary(config);
     }
 
