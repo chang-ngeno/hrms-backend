@@ -14,3 +14,12 @@ spring:
     url: jdbc:postgresql://hrms-db:5432/hrms
     username: postgres
     password: postgres123
+
+
+# Server port
+server:
+  port: 8080
+
+# CORS URL Configuration
+cors:
+  origin: http://localhost:5000
