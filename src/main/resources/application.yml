@@ -22,4 +22,4 @@ server:
 
 # CORS URL Configuration
 cors:
-  origin: http://localhost:5000
+  origin: http://0.0.0.0:5000

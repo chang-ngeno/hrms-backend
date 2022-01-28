@@ -34,4 +34,4 @@ COPY --from=build ${DEPENDENCY}/META-INF /app/META-INF
 COPY --from=build ${DEPENDENCY}/BOOT-INF/classes /app
 # COPY --from=build ${DEPENDENCY}/WEB-INF /app/WEB-INF
 
-ENTRYPOINT ["java","-cp","app:app/lib/*","latifyilmaz.hrms.HrmsApplication"]
+ENTRYPOINT ["java","-cp","app:app/lib/*","changsoft.hrms.HrmsApplication"]

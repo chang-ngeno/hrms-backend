@@ -22,7 +22,7 @@ CREATE TABLE public.employees
     user_id integer NOT NULL,
     first_name character varying(30) NOT NULL,
     last_name character varying(30) NOT NULL,
-    identity_no character varying(11) NOT NULL,
+    identity_no character varying(15) NOT NULL,
     birth_year integer NOT NULL,
     position_id integer NOT NULL,
     PRIMARY KEY (user_id)
@@ -31,9 +31,9 @@ CREATE TABLE public.employees
 CREATE TABLE public.employers
 (
     user_id integer NOT NULL,
-    company_name character varying(60) NOT NULL,
+    company_name character varying(100) NOT NULL,
     website character varying(30) NOT NULL,
-    phone character varying(10) NOT NULL,
+    phone character varying(20) NOT NULL,
     verified_by_system boolean NOT NULL,
     PRIMARY KEY (user_id)
 );

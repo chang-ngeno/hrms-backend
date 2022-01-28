@@ -1,0 +1,9 @@
+package changsoft.hrms.dataAccess.abstracts;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import changsoft.hrms.entities.concretes.City;
+
+public interface CityDao extends JpaRepository<City, Integer> {
+    City getByCityName(String cityName);
+}

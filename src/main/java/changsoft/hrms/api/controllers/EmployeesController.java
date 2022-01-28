@@ -1,0 +1,87 @@
+package changsoft.hrms.api.controllers;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.validation.FieldError;
+import org.springframework.web.bind.MethodArgumentNotValidException;
+import org.springframework.web.bind.annotation.*;
+
+import changsoft.hrms.business.abstracts.EmployeeService;
+import changsoft.hrms.business.constants.MessageResults;
+import changsoft.hrms.core.utilities.results.DataResult;
+import changsoft.hrms.core.utilities.results.ErrorDataResult;
+import changsoft.hrms.core.utilities.results.Result;
+import changsoft.hrms.entities.concretes.Employee;
+import changsoft.hrms.entities.dtos.employee.EmployeeSaveDto;
+import changsoft.hrms.entities.dtos.employee.EmployeeUpdateDto;
+
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+@RestController
+@RequestMapping("/api/employees")
+@CrossOrigin
+public class EmployeesController {
+    private final EmployeeService employeeService;
+
+    @Autowired
+    public EmployeesController(EmployeeService employeeService){
+        this.employeeService = employeeService;
+    }
+
+    //Get
+    @GetMapping("")
+    public DataResult<List<Employee>> getAll() {
+        return this.employeeService.getAll();
+    }
+
+    @GetMapping("/{id}")
+    public ResponseEntity<?> getById(@PathVariable(value = "id") int id) {
+        return ResponseEntity.ok(this.employeeService.getById(id));
+    }
+
+    @GetMapping("/getByEmail")
+    public DataResult<Employee> getByEmail(@RequestParam(value = "email") String email) {
+        return this.employeeService.getByEmail(email);
+    }
+
+    @GetMapping("/getByIdentityNo")
+    public DataResult<Employee> getByIdentityNo(@RequestParam(value = "identityNo") String identityNo) {
+        return this.employeeService.getByIdentityNo(identityNo);
+    }
+
+    //Post
+    @PostMapping("")
+    public Result save(@RequestBody EmployeeSaveDto employee) {
+        return this.employeeService.save(employee);
+    }
+
+    //Put
+    @PutMapping("")
+    public Result updateById(@RequestBody EmployeeUpdateDto employee) {
+        return this.employeeService.updateById(employee);
+    }
+
+    //Delete
+    @DeleteMapping("")
+    public Result delete(@RequestBody Employee employee){
+        return this.employeeService.delete(employee);
+    }
+
+    @DeleteMapping("/{id}")
+    public Result deleteById(@PathVariable(value = "") int id){
+        return this.employeeService.deleteById(id);
+    }
+
+    @ExceptionHandler(MethodArgumentNotValidException.class)
+    @ResponseStatus(HttpStatus.BAD_REQUEST)
+    public ErrorDataResult<Object> handleValidationException(MethodArgumentNotValidException exceptions){
+        Map<String, String> validationErrors = new HashMap<>();
+        for(FieldError fieldError : exceptions.getBindingResult().getFieldErrors()){
+            validationErrors.put(fieldError.getField(), fieldError.getDefaultMessage());
+        }
+        return new ErrorDataResult<>(validationErrors, MessageResults.error);
+    }
+}
